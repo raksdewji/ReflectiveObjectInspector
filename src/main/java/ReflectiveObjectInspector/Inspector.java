@@ -1,7 +1,5 @@
 package ReflectiveObjectInspector;
 
-import org.graalvm.compiler.nodes.calc.ObjectEqualsNode;
-
 import java.lang.reflect.*;
 
 public class Inspector {
@@ -15,7 +13,7 @@ public class Inspector {
         print(getClassName(c), depth);
         getSuperClassName(c, obj, recursive, depth+1);
         getInterfaceName(c, obj, recursive, depth+1);
-        getConstructor(c, obj, recursive, depth+1);
+        getConstructor(c, depth+1);
     }
 
     private String getClassName(Class c) { return c.getName(); }
@@ -50,7 +48,7 @@ public class Inspector {
         }
     }
 
-    private void getConstructor(Class c, Object obj, boolean recursive, int depth) {
+    private void getConstructor(Class c, int depth) {
         Constructor[] classConstructors = c.getConstructors();
         int indent = depth+1;
         if (classConstructors.length > 0) {
