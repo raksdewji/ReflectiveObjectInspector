@@ -1,4 +1,7 @@
-package ReflectiveObjectInspector;
+import ReflectiveObjectInspector.ClassA;
+import ReflectiveObjectInspector.ClassB;
+import ReflectiveObjectInspector.ClassD;
+import ReflectiveObjectInspector.Inspector;
 
 import java.io.*;
 
