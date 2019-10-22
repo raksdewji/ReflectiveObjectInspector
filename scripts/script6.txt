@@ -1,0 +1,61 @@
+======================================================
+Filename: script6.txt
+Running Test: [LReflectiveObjectInspector.ClassB;@4617c264
+Recursive: false
+Class: [LReflectiveObjectInspector.ClassB;
+  Super Class Name: java.lang.Object
+    Class: java.lang.Object
+      Constructor Name: java.lang.Object
+        Constructor Modifiers: public
+      Method: finalize
+        Method Return Type: void
+        Method Modifiers: protected
+        Method Exceptions: java.lang.Throwable
+      Method: wait
+        Method Return Type: void
+        Method Modifiers: public final native
+        Method Exceptions: java.lang.InterruptedException
+        Method Parameter Types: long
+      Method: wait
+        Method Return Type: void
+        Method Modifiers: public final
+        Method Exceptions: java.lang.InterruptedException
+        Method Parameter Types: long
+        Method Parameter Types: int
+      Method: wait
+        Method Return Type: void
+        Method Modifiers: public final
+        Method Exceptions: java.lang.InterruptedException
+      Method: equals
+        Method Return Type: boolean
+        Method Modifiers: public
+        Method Parameter Types: java.lang.Object
+      Method: toString
+        Method Return Type: class java.lang.String
+        Method Modifiers: public
+      Method: hashCode
+        Method Return Type: int
+        Method Modifiers: public native
+      Method: getClass
+        Method Return Type: class java.lang.Class
+        Method Modifiers: public final native
+      Method: clone
+        Method Return Type: class java.lang.Object
+        Method Modifiers: protected native
+        Method Exceptions: java.lang.CloneNotSupportedException
+      Method: notify
+        Method Return Type: void
+        Method Modifiers: public final native
+      Method: notifyAll
+        Method Return Type: void
+        Method Modifiers: public final native
+      Method: registerNatives
+        Method Return Type: void
+        Method Modifiers: private static native
+  Class Implements Interface: java.lang.Cloneable
+    Class: java.lang.Cloneable
+        No super class found
+  Class Implements Interface: java.io.Serializable
+    Class: java.io.Serializable
+        No super class found
+======================================================
