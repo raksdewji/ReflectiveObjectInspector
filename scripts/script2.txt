@@ -86,13 +86,10 @@ Class: ReflectiveObjectInspector.ClassA
   Field Name: val
     Field Type: int
     Field Modifiers: private
-Field not accessible
   Field Name: val2
     Field Type: double
     Field Modifiers: private
-Field not accessible
   Field Name: val3
     Field Type: boolean
     Field Modifiers: private
-Field not accessible
 ======================================================

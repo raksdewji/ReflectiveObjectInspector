@@ -21,13 +21,12 @@ public class Inspector {
     private String getClassName(Class c) { return c.getName(); }
 
     private void getSuperClassName(Class child, Object obj, boolean recursive, int depth) {
+        Class superClass = child.getSuperclass();
+        int indent = depth+1;
 
         if (child.equals(Object.class)){
             return;
         }
-
-        Class superClass = child.getSuperclass();
-        int indent = depth+1;
 
         if (superClass != null) {
             print("Super Class Name: " + superClass.getName(), depth);
@@ -54,14 +53,18 @@ public class Inspector {
         int indent = depth+1;
         if (classConstructors.length > 0) {
             for (Constructor con : classConstructors) {
-                print("Constructor Name: " + con.getName(), depth);
-                print("Constructor Modifiers: " + Modifier.toString(con.getModifiers()), indent);
-
-                Class[] paramTypes = con.getParameterTypes();
-                for (Class paramType : paramTypes)
-                    print("Constructor Parameter Types: " + paramType.getName(), indent);
+                printConstructorInfo(depth, indent, con);
             }
         }
+    }
+
+    private void printConstructorInfo(int depth, int indent, Constructor con) {
+        print("Constructor Name: " + con.getName(), depth);
+        print("Constructor Modifiers: " + Modifier.toString(con.getModifiers()), indent);
+
+        Class[] paramTypes = con.getParameterTypes();
+        for (Class paramType : paramTypes)
+            print("Constructor Parameter Types: " + paramType.getName(), indent);
     }
 
     private void getMethod(Class c, int depth) {
@@ -70,24 +73,28 @@ public class Inspector {
 
         if (methods.length > 0) {
             for (Method m : methods) {
-                print("Method: " + m.getName(), depth);
-                print("Method Return Type: " + m.getReturnType(), indent);
-                String modifier = Modifier.toString(m.getModifiers());
-                print("Method Modifiers: " + modifier, indent);
+                printMethodInfo(depth, indent, m);
+            }
+        }
+    }
 
-                Class[] exceptions = m.getExceptionTypes();
-                if (exceptions.length > 0) {
-                    for (Class e : exceptions) {
-                        print("Method Exceptions: " + e.getName(), indent);
-                    }
-                }
+    private void printMethodInfo(int depth, int indent, Method m) {
+        print("Method: " + m.getName(), depth);
+        print("Method Return Type: " + m.getReturnType(), indent);
+        String modifier = Modifier.toString(m.getModifiers());
+        print("Method Modifiers: " + modifier, indent);
 
-                Class[] parameters = m.getParameterTypes();
-                if (parameters.length > 0) {
-                    for (Class p : parameters) {
-                        print("Method Parameter Types: " + p.getName(), indent);
-                    }
-                }
+        Class[] exceptions = m.getExceptionTypes();
+        if (exceptions.length > 0) {
+            for (Class e : exceptions) {
+                print("Method Exceptions: " + e.getName(), indent);
+            }
+        }
+
+        Class[] parameters = m.getParameterTypes();
+        if (parameters.length > 0) {
+            for (Class p : parameters) {
+                print("Method Parameter Types: " + p.getName(), indent);
             }
         }
     }
@@ -98,35 +105,43 @@ public class Inspector {
 
         if (fields.length > 0) {
             for (Field f : fields) {
-                print("Field Name: " + f.getName(), depth);
-                Class type = f.getType();
-                print("Field Type: " + type.getSimpleName(), indent);
-                String modifiers = Modifier.toString(f.getModifiers());
-                print("Field Modifiers: " + modifiers, indent);
+                printFieldInfo(obj, recursive, depth, indent, f);
+            }
+        }
+    }
 
-                try {
-                    Object vObj = f.get(obj);
+    private void printFieldInfo(Object obj, boolean recursive, int depth, int indent, Field f) {
+        f.setAccessible(true);
+        print("Field Name: " + f.getName(), depth);
+        Class type = f.getType();
+        print("Field Type: " + type.getSimpleName(), indent);
+        String modifiers = Modifier.toString(f.getModifiers());
+        print("Field Modifiers: " + modifiers, indent);
 
-                    if (type.isArray()) {
-                        getArrayInfo(f.getType(), vObj, recursive, indent);
-                    }
-                    else if (type.isPrimitive()) {
-                        print("Value: " + vObj.toString(), indent);
-                    }
-                    else if (vObj == null) {
-                        print("Value: null", indent);
-                    }
-                    else {
-                        if (recursive) {
-                            inspectClass(type, vObj, true, indent);
-                        } else {
-                            print("Reference Value: " + vObj.getClass().getName()
-                                    + "@" + obj.hashCode(), indent);
-                        }
-                    }
-                } catch (IllegalAccessException e) {
-                    System.out.println("Field not accessible");
-                }
+        try {
+            Object vObj = f.get(obj);
+            checkObject(obj, recursive, indent, f, type, vObj);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void checkObject(Object obj, boolean recursive, int indent, Field f, Class type, Object vObj) {
+        if (type.isArray()) {
+            getArrayInfo(f.getType(), vObj, recursive, indent);
+        }
+        else if (type.isPrimitive()) {
+            print("Value: " + vObj.toString(), indent);
+        }
+        else if (vObj == null) {
+            print("Value: null", indent);
+        }
+        else {
+            if (recursive) {
+                inspectClass(type, vObj, true, indent);
+            } else {
+                print("Reference Value: " + vObj.getClass().getName()
+                        + "@" + obj.hashCode(), indent);
             }
         }
     }
@@ -141,23 +156,26 @@ public class Inspector {
 
         for (int i = 0; i < aLength; i++) {
             Object aObject = Array.get(obj, i);
+            checkArrayObject(recursive, cType, indent, aObject);
+        }
+    }
 
-            if (cType.isArray()) {
+    private void checkArrayObject(boolean recursive, Class cType, int indent, Object aObject) {
+        if (cType.isArray()) {
+            getArrayInfo(aObject.getClass(), aObject, recursive, indent+1);
+        }
+        else if (cType.isPrimitive()) {
+            print(aObject.getClass().getName(), indent+1);
+        }
+        else if (aObject == null) {
+            print("null",indent+1);
+        }
+        else {
+            if (recursive) {
                 getArrayInfo(aObject.getClass(), aObject, recursive, indent+1);
             }
-            else if (cType.isPrimitive()) {
-                print(aObject.getClass().getName(), indent+1);
-            }
-            else if (aObject == null) {
-                print("null",indent+1);
-            }
             else {
-                if (recursive) {
-                    getArrayInfo(aObject.getClass(), aObject, recursive, indent+1);
-                }
-                else {
-                    print("Value: " + aObject.getClass().getName() + "@" + aObject.getClass().hashCode(), indent+1);
-                }
+                print("Value: " + aObject.getClass().getName() + "@" + aObject.getClass().hashCode(), indent+1);
             }
         }
     }
@@ -168,6 +186,5 @@ public class Inspector {
 
         System.out.println(output);
     }
-
 
 }

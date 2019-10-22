@@ -1,6 +1,6 @@
 ======================================================
 Filename: script6.txt
-Running Test: [LReflectiveObjectInspector.ClassB;@4617c264
+Running Test: [LReflectiveObjectInspector.ClassB;@7adf9f5f
 Recursive: false
 Class: [LReflectiveObjectInspector.ClassB;
   Super Class Name: java.lang.Object

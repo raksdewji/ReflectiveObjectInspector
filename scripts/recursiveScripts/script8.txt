@@ -13,15 +13,15 @@ Class: java.lang.String
         Method Exceptions: java.lang.Throwable
       Method: wait
         Method Return Type: void
-        Method Modifiers: public final native
-        Method Exceptions: java.lang.InterruptedException
-        Method Parameter Types: long
-      Method: wait
-        Method Return Type: void
         Method Modifiers: public final
         Method Exceptions: java.lang.InterruptedException
         Method Parameter Types: long
         Method Parameter Types: int
+      Method: wait
+        Method Return Type: void
+        Method Modifiers: public final native
+        Method Exceptions: java.lang.InterruptedException
+        Method Parameter Types: long
       Method: wait
         Method Return Type: void
         Method Modifiers: public final
@@ -43,15 +43,15 @@ Class: java.lang.String
         Method Return Type: class java.lang.Object
         Method Modifiers: protected native
         Method Exceptions: java.lang.CloneNotSupportedException
+      Method: registerNatives
+        Method Return Type: void
+        Method Modifiers: private static native
       Method: notify
         Method Return Type: void
         Method Modifiers: public final native
       Method: notifyAll
         Method Return Type: void
         Method Modifiers: public final native
-      Method: registerNatives
-        Method Return Type: void
-        Method Modifiers: private static native
   Class Implements Interface: java.io.Serializable
     Class: java.io.Serializable
         No super class found
@@ -65,15 +65,12 @@ Class: java.lang.String
   Class Implements Interface: java.lang.CharSequence
     Class: java.lang.CharSequence
         No super class found
-      Method: length
-        Method Return Type: int
-        Method Modifiers: public abstract
       Method: toString
         Method Return Type: class java.lang.String
         Method Modifiers: public abstract
-      Method: codePoints
-        Method Return Type: interface java.util.stream.IntStream
-        Method Modifiers: public
+      Method: length
+        Method Return Type: int
+        Method Modifiers: public abstract
       Method: charAt
         Method Return Type: char
         Method Modifiers: public abstract
@@ -86,34 +83,15 @@ Class: java.lang.String
       Method: chars
         Method Return Type: interface java.util.stream.IntStream
         Method Modifiers: public
-      Method: compare
-        Method Return Type: int
-        Method Modifiers: public static
-        Method Parameter Types: java.lang.CharSequence
-        Method Parameter Types: java.lang.CharSequence
+      Method: codePoints
+        Method Return Type: interface java.util.stream.IntStream
+        Method Modifiers: public
       Method: lambda$codePoints$1
         Method Return Type: interface java.util.Spliterator$OfInt
         Method Modifiers: private
       Method: lambda$chars$0
         Method Return Type: interface java.util.Spliterator$OfInt
         Method Modifiers: private
-  Class Implements Interface: java.lang.constant.Constable
-    Class: java.lang.constant.Constable
-        No super class found
-      Method: describeConstable
-        Method Return Type: class java.util.Optional
-        Method Modifiers: public abstract
-  Class Implements Interface: java.lang.constant.ConstantDesc
-    Class: java.lang.constant.ConstantDesc
-        No super class found
-      Method: resolveConstantDesc
-        Method Return Type: class java.lang.Object
-        Method Modifiers: public abstract
-        Method Exceptions: java.lang.ReflectiveOperationException
-        Method Parameter Types: java.lang.invoke.MethodHandles$Lookup
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
-    Constructor Parameter Types: [B
   Constructor Name: java.lang.String
     Constructor Modifiers: public
     Constructor Parameter Types: [B
@@ -133,6 +111,12 @@ Class: java.lang.String
     Constructor Parameter Types: int
     Constructor Parameter Types: int
     Constructor Parameter Types: java.nio.charset.Charset
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+    Constructor Parameter Types: [B
+    Constructor Parameter Types: int
+    Constructor Parameter Types: int
+    Constructor Parameter Types: java.lang.String
   Constructor Name: java.lang.String
     Constructor Modifiers: public
     Constructor Parameter Types: java.lang.StringBuilder
@@ -141,124 +125,89 @@ Class: java.lang.String
     Constructor Parameter Types: java.lang.StringBuffer
   Constructor Name: java.lang.String
     Constructor Modifiers: public
-    Constructor Parameter Types: [C
-    Constructor Parameter Types: int
-    Constructor Parameter Types: int
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
-    Constructor Parameter Types: [C
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
-    Constructor Parameter Types: java.lang.String
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
     Constructor Parameter Types: [B
-    Constructor Parameter Types: int
-    Constructor Parameter Types: int
-    Constructor Parameter Types: java.lang.String
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
-    Constructor Parameter Types: [B
-    Constructor Parameter Types: int
-  Constructor Name: java.lang.String
-    Constructor Modifiers: public
-    Constructor Parameter Types: [B
-    Constructor Parameter Types: int
-    Constructor Parameter Types: int
-    Constructor Parameter Types: int
   Constructor Name: java.lang.String
     Constructor Modifiers: public
     Constructor Parameter Types: [I
     Constructor Parameter Types: int
     Constructor Parameter Types: int
-  Method: value
-    Method Return Type: class [B
-    Method Modifiers: 
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+    Constructor Parameter Types: [C
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+    Constructor Parameter Types: java.lang.String
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+    Constructor Parameter Types: [C
+    Constructor Parameter Types: int
+    Constructor Parameter Types: int
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+    Constructor Parameter Types: [B
+    Constructor Parameter Types: int
+  Constructor Name: java.lang.String
+    Constructor Modifiers: public
+    Constructor Parameter Types: [B
+    Constructor Parameter Types: int
+    Constructor Parameter Types: int
+    Constructor Parameter Types: int
   Method: equals
     Method Return Type: boolean
     Method Modifiers: public
     Method Parameter Types: java.lang.Object
-  Method: length
-    Method Return Type: int
-    Method Modifiers: public
   Method: toString
     Method Return Type: class java.lang.String
     Method Modifiers: public
   Method: hashCode
     Method Return Type: int
     Method Modifiers: public
-  Method: getChars
-    Method Return Type: void
-    Method Modifiers: public
-    Method Parameter Types: int
-    Method Parameter Types: int
-    Method Parameter Types: [C
-    Method Parameter Types: int
-  Method: compareTo
-    Method Return Type: int
-    Method Modifiers: public
-    Method Parameter Types: java.lang.String
   Method: compareTo
     Method Return Type: int
     Method Modifiers: public volatile
     Method Parameter Types: java.lang.Object
+  Method: compareTo
+    Method Return Type: int
+    Method Modifiers: public
+    Method Parameter Types: java.lang.String
   Method: indexOf
     Method Return Type: int
     Method Modifiers: public
     Method Parameter Types: java.lang.String
-    Method Parameter Types: int
-  Method: indexOf
-    Method Return Type: int
-    Method Modifiers: public
     Method Parameter Types: int
   Method: indexOf
     Method Return Type: int
     Method Modifiers: static
-    Method Parameter Types: [B
-    Method Parameter Types: byte
+    Method Parameter Types: [C
+    Method Parameter Types: int
     Method Parameter Types: int
     Method Parameter Types: java.lang.String
     Method Parameter Types: int
   Method: indexOf
     Method Return Type: int
-    Method Modifiers: public
-    Method Parameter Types: int
-    Method Parameter Types: int
-  Method: indexOf
-    Method Return Type: int
-    Method Modifiers: public
-    Method Parameter Types: java.lang.String
-  Method: checkIndex
-    Method Return Type: void
     Method Modifiers: static
+    Method Parameter Types: [C
     Method Parameter Types: int
     Method Parameter Types: int
-  Method: valueOf
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
+    Method Parameter Types: [C
     Method Parameter Types: int
-  Method: valueOf
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
-    Method Parameter Types: float
-  Method: valueOf
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
-    Method Parameter Types: boolean
-  Method: valueOf
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
-    Method Parameter Types: long
-  Method: valueOf
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
-    Method Parameter Types: double
-  Method: valueOf
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
-    Method Parameter Types: java.lang.Object
+    Method Parameter Types: int
+    Method Parameter Types: int
+  Method: indexOf
+    Method Return Type: int
+    Method Modifiers: public
+    Method Parameter Types: int
+  Method: indexOf
+    Method Return Type: int
+    Method Modifiers: public
+    Method Parameter Types: java.lang.String
+  Method: indexOf
+    Method Return Type: int
+    Method Modifiers: public
+    Method Parameter Types: int
+    Method Parameter Types: int
   Method: valueOf
     Method Return Type: class java.lang.String
     Method Modifiers: public static
@@ -266,24 +215,45 @@ Class: java.lang.String
   Method: valueOf
     Method Return Type: class java.lang.String
     Method Modifiers: public static
-    Method Parameter Types: [C
+    Method Parameter Types: java.lang.Object
+  Method: valueOf
+    Method Return Type: class java.lang.String
+    Method Modifiers: public static
+    Method Parameter Types: boolean
   Method: valueOf
     Method Return Type: class java.lang.String
     Method Modifiers: public static
     Method Parameter Types: [C
     Method Parameter Types: int
     Method Parameter Types: int
-  Method: coder
-    Method Return Type: byte
-    Method Modifiers: 
-  Method: rangeCheck
-    Method Return Type: class java.lang.Void
-    Method Modifiers: private static
+  Method: valueOf
+    Method Return Type: class java.lang.String
+    Method Modifiers: public static
     Method Parameter Types: [C
+  Method: valueOf
+    Method Return Type: class java.lang.String
+    Method Modifiers: public static
+    Method Parameter Types: double
+  Method: valueOf
+    Method Return Type: class java.lang.String
+    Method Modifiers: public static
+    Method Parameter Types: float
+  Method: valueOf
+    Method Return Type: class java.lang.String
+    Method Modifiers: public static
+    Method Parameter Types: long
+  Method: valueOf
+    Method Return Type: class java.lang.String
+    Method Modifiers: public static
+    Method Parameter Types: int
+  Method: checkBounds
+    Method Return Type: void
+    Method Modifiers: private static
+    Method Parameter Types: [B
     Method Parameter Types: int
     Method Parameter Types: int
-  Method: codePoints
-    Method Return Type: interface java.util.stream.IntStream
+  Method: length
+    Method Return Type: int
     Method Modifiers: public
   Method: isEmpty
     Method Return Type: boolean
@@ -310,31 +280,37 @@ Class: java.lang.String
     Method Modifiers: public
     Method Parameter Types: int
     Method Parameter Types: int
-  Method: getBytes
-    Method Return Type: class [B
-    Method Modifiers: public
-    Method Parameter Types: java.nio.charset.Charset
-  Method: getBytes
+  Method: getChars
     Method Return Type: void
     Method Modifiers: public
     Method Parameter Types: int
     Method Parameter Types: int
-    Method Parameter Types: [B
+    Method Parameter Types: [C
     Method Parameter Types: int
+  Method: getChars
+    Method Return Type: void
+    Method Modifiers: 
+    Method Parameter Types: [C
+    Method Parameter Types: int
+  Method: getBytes
+    Method Return Type: class [B
+    Method Modifiers: public
   Method: getBytes
     Method Return Type: class [B
     Method Modifiers: public
     Method Exceptions: java.io.UnsupportedEncodingException
     Method Parameter Types: java.lang.String
   Method: getBytes
-    Method Return Type: class [B
-    Method Modifiers: public
-  Method: getBytes
     Method Return Type: void
-    Method Modifiers: 
+    Method Modifiers: public
+    Method Parameter Types: int
+    Method Parameter Types: int
     Method Parameter Types: [B
     Method Parameter Types: int
-    Method Parameter Types: byte
+  Method: getBytes
+    Method Return Type: class [B
+    Method Modifiers: public
+    Method Parameter Types: java.nio.charset.Charset
   Method: contentEquals
     Method Return Type: boolean
     Method Modifiers: public
@@ -358,7 +334,6 @@ Class: java.lang.String
   Method: regionMatches
     Method Return Type: boolean
     Method Modifiers: public
-    Method Parameter Types: boolean
     Method Parameter Types: int
     Method Parameter Types: java.lang.String
     Method Parameter Types: int
@@ -366,6 +341,7 @@ Class: java.lang.String
   Method: regionMatches
     Method Return Type: boolean
     Method Modifiers: public
+    Method Parameter Types: boolean
     Method Parameter Types: int
     Method Parameter Types: java.lang.String
     Method Parameter Types: int
@@ -374,24 +350,40 @@ Class: java.lang.String
     Method Return Type: boolean
     Method Modifiers: public
     Method Parameter Types: java.lang.String
-    Method Parameter Types: int
   Method: startsWith
     Method Return Type: boolean
     Method Modifiers: public
     Method Parameter Types: java.lang.String
+    Method Parameter Types: int
   Method: endsWith
     Method Return Type: boolean
     Method Modifiers: public
     Method Parameter Types: java.lang.String
+  Method: indexOfSupplementary
+    Method Return Type: int
+    Method Modifiers: private
+    Method Parameter Types: int
+    Method Parameter Types: int
   Method: lastIndexOf
     Method Return Type: int
     Method Modifiers: public
+    Method Parameter Types: int
     Method Parameter Types: int
   Method: lastIndexOf
     Method Return Type: int
     Method Modifiers: static
-    Method Parameter Types: [B
-    Method Parameter Types: byte
+    Method Parameter Types: [C
+    Method Parameter Types: int
+    Method Parameter Types: int
+    Method Parameter Types: [C
+    Method Parameter Types: int
+    Method Parameter Types: int
+    Method Parameter Types: int
+  Method: lastIndexOf
+    Method Return Type: int
+    Method Modifiers: static
+    Method Parameter Types: [C
+    Method Parameter Types: int
     Method Parameter Types: int
     Method Parameter Types: java.lang.String
     Method Parameter Types: int
@@ -403,20 +395,24 @@ Class: java.lang.String
   Method: lastIndexOf
     Method Return Type: int
     Method Modifiers: public
-    Method Parameter Types: java.lang.String
+    Method Parameter Types: int
   Method: lastIndexOf
     Method Return Type: int
     Method Modifiers: public
+    Method Parameter Types: java.lang.String
+  Method: lastIndexOfSupplementary
+    Method Return Type: int
+    Method Modifiers: private
     Method Parameter Types: int
     Method Parameter Types: int
   Method: substring
     Method Return Type: class java.lang.String
     Method Modifiers: public
     Method Parameter Types: int
-    Method Parameter Types: int
   Method: substring
     Method Return Type: class java.lang.String
     Method Modifiers: public
+    Method Parameter Types: int
     Method Parameter Types: int
   Method: subSequence
     Method Return Type: interface java.lang.CharSequence
@@ -430,13 +426,13 @@ Class: java.lang.String
   Method: replace
     Method Return Type: class java.lang.String
     Method Modifiers: public
-    Method Parameter Types: java.lang.CharSequence
-    Method Parameter Types: java.lang.CharSequence
+    Method Parameter Types: char
+    Method Parameter Types: char
   Method: replace
     Method Return Type: class java.lang.String
     Method Modifiers: public
-    Method Parameter Types: char
-    Method Parameter Types: char
+    Method Parameter Types: java.lang.CharSequence
+    Method Parameter Types: java.lang.CharSequence
   Method: matches
     Method Return Type: boolean
     Method Modifiers: public
@@ -459,28 +455,28 @@ Class: java.lang.String
     Method Return Type: class [Ljava.lang.String;
     Method Modifiers: public
     Method Parameter Types: java.lang.String
+    Method Parameter Types: int
   Method: split
     Method Return Type: class [Ljava.lang.String;
     Method Modifiers: public
     Method Parameter Types: java.lang.String
-    Method Parameter Types: int
-  Method: join
-    Method Return Type: class java.lang.String
-    Method Modifiers: public static
-    Method Parameter Types: java.lang.CharSequence
-    Method Parameter Types: java.lang.Iterable
   Method: join
     Method Return Type: class java.lang.String
     Method Modifiers: public static transient
     Method Parameter Types: java.lang.CharSequence
     Method Parameter Types: [Ljava.lang.CharSequence;
-  Method: toLowerCase
+  Method: join
     Method Return Type: class java.lang.String
-    Method Modifiers: public
+    Method Modifiers: public static
+    Method Parameter Types: java.lang.CharSequence
+    Method Parameter Types: java.lang.Iterable
   Method: toLowerCase
     Method Return Type: class java.lang.String
     Method Modifiers: public
     Method Parameter Types: java.util.Locale
+  Method: toLowerCase
+    Method Return Type: class java.lang.String
+    Method Modifiers: public
   Method: toUpperCase
     Method Return Type: class java.lang.String
     Method Modifiers: public
@@ -490,48 +486,6 @@ Class: java.lang.String
     Method Parameter Types: java.util.Locale
   Method: trim
     Method Return Type: class java.lang.String
-    Method Modifiers: public
-  Method: strip
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
-  Method: stripLeading
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
-  Method: stripTrailing
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
-  Method: isBlank
-    Method Return Type: boolean
-    Method Modifiers: public
-  Method: lines
-    Method Return Type: interface java.util.stream.Stream
-    Method Modifiers: public
-  Method: lines
-    Method Return Type: interface java.util.stream.Stream
-    Method Modifiers: private
-    Method Parameter Types: int
-    Method Parameter Types: int
-  Method: indent
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
-    Method Parameter Types: int
-  Method: indent
-    Method Return Type: class java.lang.String
-    Method Modifiers: private
-    Method Parameter Types: int
-    Method Parameter Types: boolean
-  Method: indexOfNonWhitespace
-    Method Return Type: int
-    Method Modifiers: private
-  Method: lastIndexOfNonWhitespace
-    Method Return Type: int
-    Method Modifiers: private
-  Method: transform
-    Method Return Type: class java.lang.Object
-    Method Modifiers: public
-    Method Parameter Types: java.util.function.Function
-  Method: chars
-    Method Return Type: interface java.util.stream.IntStream
     Method Modifiers: public
   Method: toCharArray
     Method Return Type: class [C
@@ -551,93 +505,44 @@ Class: java.lang.String
     Method Return Type: class java.lang.String
     Method Modifiers: public static
     Method Parameter Types: [C
+    Method Parameter Types: int
+    Method Parameter Types: int
   Method: copyValueOf
     Method Return Type: class java.lang.String
     Method Modifiers: public static
     Method Parameter Types: [C
-    Method Parameter Types: int
-    Method Parameter Types: int
   Method: intern
     Method Return Type: class java.lang.String
     Method Modifiers: public native
-  Method: repeat
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
-    Method Parameter Types: int
-  Method: isLatin1
-    Method Return Type: boolean
-    Method Modifiers: private
-  Method: checkOffset
-    Method Return Type: void
-    Method Modifiers: static
-    Method Parameter Types: int
-    Method Parameter Types: int
-  Method: checkBoundsOffCount
-    Method Return Type: void
-    Method Modifiers: static
-    Method Parameter Types: int
-    Method Parameter Types: int
-    Method Parameter Types: int
-  Method: checkBoundsBeginEnd
-    Method Return Type: void
-    Method Modifiers: static
-    Method Parameter Types: int
-    Method Parameter Types: int
-    Method Parameter Types: int
-  Method: valueOfCodePoint
-    Method Return Type: class java.lang.String
-    Method Modifiers: static
-    Method Parameter Types: int
-  Method: describeConstable
-    Method Return Type: class java.util.Optional
-    Method Modifiers: public
-  Method: resolveConstantDesc
-    Method Return Type: class java.lang.Object
-    Method Modifiers: public volatile
-    Method Exceptions: java.lang.ReflectiveOperationException
-    Method Parameter Types: java.lang.invoke.MethodHandles$Lookup
-  Method: resolveConstantDesc
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
-    Method Parameter Types: java.lang.invoke.MethodHandles$Lookup
-  Method: lambda$indent$2
-    Method Return Type: class java.lang.String
-    Method Modifiers: private static
-    Method Parameter Types: int
-    Method Parameter Types: java.lang.String
-  Method: lambda$indent$1
-    Method Return Type: class java.lang.String
-    Method Modifiers: private static
-    Method Parameter Types: java.lang.String
-  Method: lambda$indent$0
-    Method Return Type: class java.lang.String
-    Method Modifiers: private static
-    Method Parameter Types: java.lang.String
-    Method Parameter Types: java.lang.String
   Field Name: value
-    Field Type: byte[]
+    Field Type: char[]
     Field Modifiers: private final
-Field not accessible
-  Field Name: coder
-    Field Type: byte
-    Field Modifiers: private final
-Field not accessible
+      Component Type: char
+      Array Length: 11
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
+        java.lang.Character
   Field Name: hash
     Field Type: int
     Field Modifiers: private
-Field not accessible
+    Value: 0
   Field Name: serialVersionUID
     Field Type: long
     Field Modifiers: private static final
-Field not accessible
-  Field Name: COMPACT_STRINGS
-    Field Type: boolean
-    Field Modifiers: static final
-Field not accessible
+    Value: -6849794470754667710
   Field Name: serialPersistentFields
     Field Type: ObjectStreamField[]
     Field Modifiers: private static final
-Field not accessible
+      Component Type: ObjectStreamField
+      Array Length: 0
   Field Name: CASE_INSENSITIVE_ORDER
     Field Type: Comparator
     Field Modifiers: public static final
@@ -756,12 +661,4 @@ Field not accessible
         Method Parameter Types: java.util.Comparator
         Method Parameter Types: java.lang.Object
         Method Parameter Types: java.lang.Object
-  Field Name: LATIN1
-    Field Type: byte
-    Field Modifiers: static final
-Field not accessible
-  Field Name: UTF16
-    Field Type: byte
-    Field Modifiers: static final
-Field not accessible
 ======================================================

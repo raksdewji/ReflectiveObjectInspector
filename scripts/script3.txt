@@ -70,19 +70,15 @@ Class: ReflectiveObjectInspector.ClassB
           Field Name: val
             Field Type: ClassA
             Field Modifiers: private
-Field not accessible
           Field Name: val2
             Field Type: ClassA
             Field Modifiers: private static
-Field not accessible
           Field Name: val3
             Field Type: int
             Field Modifiers: private
-Field not accessible
           Field Name: vallarray
             Field Type: ClassA[]
             Field Modifiers: private
-Field not accessible
       Class Implements Interface: ReflectiveObjectInspector.InterfaceA
         Class: ReflectiveObjectInspector.InterfaceA
             No super class found
@@ -150,15 +146,12 @@ Field not accessible
       Field Name: val2
         Field Type: ClassA
         Field Modifiers: private
-Field not accessible
       Field Name: val3
         Field Type: ClassA
         Field Modifiers: private
-Field not accessible
       Field Name: val4
         Field Type: ClassA
         Field Modifiers: private
-Field not accessible
   Class Implements Interface: java.lang.Runnable
     Class: java.lang.Runnable
         No super class found
@@ -180,13 +173,10 @@ Field not accessible
   Field Name: val
     Field Type: ClassA
     Field Modifiers: private
-Field not accessible
   Field Name: val2
     Field Type: ClassA
     Field Modifiers: private
-Field not accessible
   Field Name: val3
     Field Type: ClassA
     Field Modifiers: private
-Field not accessible
 ======================================================

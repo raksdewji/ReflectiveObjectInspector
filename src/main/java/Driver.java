@@ -25,7 +25,19 @@ public class Driver {
     public static void runTest(String filename, Object testObj, boolean recursive) {
         try {
             PrintStream old = System.out;
-            File file = new File(filename);
+            String path;
+            if (recursive) {
+                path = "scripts/recursiveScripts/";
+            }
+            else {
+                path = "scripts/";
+            }
+            File dir = new File(path);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
+            File file = new File(dir.getAbsolutePath() + "/" + filename);
             FileOutputStream fos = new FileOutputStream(file);
             PrintStream ps = new PrintStream(fos);
             System.setOut(ps);

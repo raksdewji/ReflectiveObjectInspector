@@ -617,27 +617,21 @@ Class: java.lang.String
   Field Name: value
     Field Type: byte[]
     Field Modifiers: private final
-Field not accessible
   Field Name: coder
     Field Type: byte
     Field Modifiers: private final
-Field not accessible
   Field Name: hash
     Field Type: int
     Field Modifiers: private
-Field not accessible
   Field Name: serialVersionUID
     Field Type: long
     Field Modifiers: private static final
-Field not accessible
   Field Name: COMPACT_STRINGS
     Field Type: boolean
     Field Modifiers: static final
-Field not accessible
   Field Name: serialPersistentFields
     Field Type: ObjectStreamField[]
     Field Modifiers: private static final
-Field not accessible
   Field Name: CASE_INSENSITIVE_ORDER
     Field Type: Comparator
     Field Modifiers: public static final
@@ -645,9 +639,7 @@ Field not accessible
   Field Name: LATIN1
     Field Type: byte
     Field Modifiers: static final
-Field not accessible
   Field Name: UTF16
     Field Type: byte
     Field Modifiers: static final
-Field not accessible
 ======================================================
