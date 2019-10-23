@@ -9,7 +9,7 @@ public class Inspector {
         inspectClass(c, obj, recursive, 0);
     }
 
-    private void inspectClass(Class c, Object obj, boolean recursive, int depth) {
+    public void inspectClass(Class c, Object obj, boolean recursive, int depth) {
         print("Class: " + getClassName(c), depth);
         getSuperClassName(c, obj, recursive, depth+1);
         getInterfaceName(c, obj, recursive, depth+1);
@@ -18,9 +18,9 @@ public class Inspector {
         getFieldInfo(c, obj, recursive, depth+1);
     }
 
-    private String getClassName(Class c) { return c.getName(); }
+    public String getClassName(Class c) { return c.getName(); }
 
-    private void getSuperClassName(Class child, Object obj, boolean recursive, int depth) {
+    public void getSuperClassName(Class child, Object obj, boolean recursive, int depth) {
         Class superClass = child.getSuperclass();
         int indent = depth+1;
 
@@ -37,7 +37,7 @@ public class Inspector {
         }
     }
 
-    private void getInterfaceName(Class c, Object obj, boolean recursive, int depth) {
+    public void getInterfaceName(Class c, Object obj, boolean recursive, int depth) {
         Class[] classInterfaces = c.getInterfaces();
         int indent = depth + 1;
         if (classInterfaces.length > 0) {
@@ -48,7 +48,7 @@ public class Inspector {
         }
     }
 
-    private void getConstructor(Class c, int depth) {
+    public void getConstructor(Class c, int depth) {
         Constructor[] classConstructors = c.getConstructors();
         int indent = depth+1;
         if (classConstructors.length > 0) {
@@ -58,7 +58,7 @@ public class Inspector {
         }
     }
 
-    private void printConstructorInfo(int depth, int indent, Constructor con) {
+    public void printConstructorInfo(int depth, int indent, Constructor con) {
         print("Constructor Name: " + con.getName(), depth);
         print("Constructor Modifiers: " + Modifier.toString(con.getModifiers()), indent);
 
@@ -67,7 +67,7 @@ public class Inspector {
             print("Constructor Parameter Types: " + paramType.getName(), indent);
     }
 
-    private void getMethod(Class c, int depth) {
+    public void getMethod(Class c, int depth) {
         Method[] methods = c.getDeclaredMethods();
         int indent = depth +1;
 
@@ -78,7 +78,7 @@ public class Inspector {
         }
     }
 
-    private void printMethodInfo(int depth, int indent, Method m) {
+    public void printMethodInfo(int depth, int indent, Method m) {
         print("Method: " + m.getName(), depth);
         print("Method Return Type: " + m.getReturnType(), indent);
         String modifier = Modifier.toString(m.getModifiers());
@@ -99,7 +99,7 @@ public class Inspector {
         }
     }
 
-    private void getFieldInfo(Class c, Object obj, boolean recursive, int depth) {
+    public void getFieldInfo(Class c, Object obj, boolean recursive, int depth) {
         Field[] fields = c.getDeclaredFields();
         int indent = depth + 1;
 
@@ -110,7 +110,7 @@ public class Inspector {
         }
     }
 
-    private void printFieldInfo(Object obj, boolean recursive, int depth, int indent, Field f) {
+    public void printFieldInfo(Object obj, boolean recursive, int depth, int indent, Field f) {
         f.setAccessible(true);
         print("Field Name: " + f.getName(), depth);
         Class type = f.getType();
@@ -126,7 +126,7 @@ public class Inspector {
         }
     }
 
-    private void checkObject(Object obj, boolean recursive, int indent, Field f, Class type, Object vObj) {
+    public void checkObject(Object obj, boolean recursive, int indent, Field f, Class type, Object vObj) {
         if (type.isArray()) {
             getArrayInfo(f.getType(), vObj, recursive, indent);
         }
@@ -146,7 +146,7 @@ public class Inspector {
         }
     }
 
-    private void getArrayInfo(Class c, Object obj, boolean recursive, int depth) {
+    public void getArrayInfo(Class c, Object obj, boolean recursive, int depth) {
         Class cType = c.getComponentType();
         int indent = depth + 1;
         int aLength = Array.getLength(obj);
@@ -160,7 +160,7 @@ public class Inspector {
         }
     }
 
-    private void checkArrayObject(boolean recursive, Class cType, int indent, Object aObject) {
+    public void checkArrayObject(boolean recursive, Class cType, int indent, Object aObject) {
         if (cType.isArray()) {
             getArrayInfo(aObject.getClass(), aObject, recursive, indent+1);
         }
@@ -183,7 +183,6 @@ public class Inspector {
     private void print(String output, int depth) {
         for (int i = 0; i < depth; i++)
             System.out.print("  ");
-
         System.out.println(output);
     }
 
