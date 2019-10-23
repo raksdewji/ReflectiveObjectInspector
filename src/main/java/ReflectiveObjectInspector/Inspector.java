@@ -3,7 +3,8 @@
  * Rakheem Dewji
  * UCID: 30062688
  *
- * This assignment inspects an object during run time and gets the following information:
+ * This assignment inspects Java objects during run time using reflection
+ * and gets the following information:
  *
  * - The name of the declaring class
  * - The name of the immediate super-class
