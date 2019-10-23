@@ -60,6 +60,7 @@ public class InspectorTest {
     public void testObjectArray() {
         new Inspector().inspect(new ClassB[12], false);
         assert(output.toString().contains("Array Length: 12"));
+        // make sure the other object info is not printed
         assert(!output.toString().contains("Super Class Name: java.lang.Object"));
     }
 

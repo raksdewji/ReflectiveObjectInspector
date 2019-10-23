@@ -1,3 +1,22 @@
+/*
+ * CPSC 501 Assignment 2
+ * Rakheem Dewji
+ * UCID: 30062688
+ *
+ * This assignment inspects an object during run time and gets the following information:
+ *
+ * - The name of the declaring class
+ * - The name of the immediate super-class
+ * - The name of each interface the class implements
+ * - The constructors the class declares. For each, also find the following:
+ *      - The name, The parameter types, The modifiers
+ * - The methods the class declares. For each, also find the following:
+ *      - The name, The exceptions thrown, The return type, The modifiers
+ * - The fields the class declares. For each, also find the following:
+ *      - The name, The type, The modifiers, The current value of each field
+ *
+ */
+
 package ReflectiveObjectInspector;
 
 import java.lang.reflect.*;
@@ -22,17 +41,18 @@ public class Inspector {
             getArrayInfo(c, obj, recursive, depth);
     }
 
+    // Get the objects class name
     public void getClassName(Class c, int depth) {
         print("Class: " + c.getName(), depth);
     }
 
+    // Get the object's super class name
     public void getSuperClassName(Class child, Object obj, boolean recursive, int depth) {
         Class superClass = child.getSuperclass();
         int indent = depth+1;
 
         if (child.equals(Object.class))
             return;
-
 
         if (superClass != null) {
             print("Super Class Name: " + superClass.getName(), depth);
@@ -43,6 +63,7 @@ public class Inspector {
         }
     }
 
+    // Get the name of each interface the class implements
     private void getInterfaceName(Class c, Object obj, boolean recursive, int depth) {
         Class[] classInterfaces = c.getInterfaces();
         int indent = depth + 1;
@@ -54,6 +75,7 @@ public class Inspector {
         }
     }
 
+    // Get the constructors that the class declares
     public void getConstructor(Class c, int depth) {
         Constructor[] classConstructors = c.getConstructors();
         int indent = depth+1;
@@ -64,6 +86,7 @@ public class Inspector {
         }
     }
 
+    // Helper function to print the constructor info
     private void printConstructorInfo(int depth, int indent, Constructor con) {
         print("Constructor Name: " + con.getName(), depth);
         print("Constructor Modifiers: " + Modifier.toString(con.getModifiers()), indent);
@@ -73,17 +96,18 @@ public class Inspector {
             print("Constructor Parameter Types: " + paramType.getName(), indent);
     }
 
+    // Get the methods that the class declares
     public void getMethod(Class c, int depth) {
         Method[] methods = c.getDeclaredMethods();
         int indent = depth +1;
 
         if (methods.length > 0) {
-            for (Method m : methods) {
+            for (Method m : methods)
                 printMethodInfo(depth, indent, m);
-            }
         }
     }
 
+    // Helper function to print to the me
     private void printMethodInfo(int depth, int indent, Method m) {
         print("Method: " + m.getName(), depth);
         print("Method Return Type: " + m.getReturnType(), indent);
@@ -105,6 +129,7 @@ public class Inspector {
         }
     }
 
+    // Gets the field information for the fields the class declares
     public void getFieldInfo(Class c, Object obj, boolean recursive, int depth) {
         Field[] fields = c.getDeclaredFields();
         int indent = depth + 1;
@@ -116,6 +141,7 @@ public class Inspector {
         }
     }
 
+    // Helper function to print field info
     private void printFieldInfo(Object obj, boolean recursive, int depth, int indent, Field f) {
         f.setAccessible(true);
         print("Field Name: " + f.getName(), depth);
@@ -131,6 +157,7 @@ public class Inspector {
             e.printStackTrace();
         }
     }
+
 
     private void checkObject(Object obj, boolean recursive, int indent, Field f, Class type, Object vObj) {
 
