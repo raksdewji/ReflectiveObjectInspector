@@ -9,7 +9,7 @@ public class Driver {
 
     public static void main(String[] args) throws Exception {
         boolean rec = true;
-        if (args.length == 1) {
+        if (args.length == 2) {
             rec = Boolean.parseBoolean(args[1]);
         }
         runTest("script1.txt", new ClassA(), rec);
