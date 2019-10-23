@@ -66,6 +66,12 @@ Class: ReflectiveObjectInspector.ClassA
   Constructor Name: ReflectiveObjectInspector.ClassA
     Constructor Modifiers: public
     Constructor Parameter Types: int
+  Method: getVal
+    Method Return Type: int
+    Method Modifiers: public
+  Method: printSomething
+    Method Return Type: void
+    Method Modifiers: private
   Method: run
     Method Return Type: void
     Method Modifiers: public
@@ -77,12 +83,6 @@ Class: ReflectiveObjectInspector.ClassA
     Method Modifiers: public
     Method Exceptions: java.lang.Exception
     Method Parameter Types: int
-  Method: getVal
-    Method Return Type: int
-    Method Modifiers: public
-  Method: printSomething
-    Method Return Type: void
-    Method Modifiers: private
   Field Name: val
     Field Type: int
     Field Modifiers: private

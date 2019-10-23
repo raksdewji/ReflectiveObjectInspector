@@ -57,11 +57,11 @@ Class: ReflectiveObjectInspector.ClassD
   Constructor Name: ReflectiveObjectInspector.ClassD
     Constructor Modifiers: public
     Constructor Parameter Types: int
-  Method: toString
-    Method Return Type: class java.lang.String
-    Method Modifiers: public
   Method: getVal3
     Method Return Type: int
+    Method Modifiers: public
+  Method: toString
+    Method Return Type: class java.lang.String
     Method Modifiers: public
   Field Name: val
     Field Type: ClassA
@@ -130,6 +130,12 @@ Class: ReflectiveObjectInspector.ClassD
       Constructor Name: ReflectiveObjectInspector.ClassA
         Constructor Modifiers: public
         Constructor Parameter Types: int
+      Method: getVal
+        Method Return Type: int
+        Method Modifiers: public
+      Method: printSomething
+        Method Return Type: void
+        Method Modifiers: private
       Method: run
         Method Return Type: void
         Method Modifiers: public
@@ -141,12 +147,6 @@ Class: ReflectiveObjectInspector.ClassD
         Method Modifiers: public
         Method Exceptions: java.lang.Exception
         Method Parameter Types: int
-      Method: getVal
-        Method Return Type: int
-        Method Modifiers: public
-      Method: printSomething
-        Method Return Type: void
-        Method Modifiers: private
       Field Name: val
         Field Type: int
         Field Modifiers: private
